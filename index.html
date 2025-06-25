@@ -494,11 +494,45 @@
         >
       </div>
     </div>
-    <button onclick="submitAnswers('q11', 5, 'result-III')">
+    <!-- Passage 6 -->
+    <div class="reading-passage">
+      <p>
+        Climate scientists have measured the temperature and rainfall on every
+        part of the Earth over many years. They look at the changes and predict
+        the future. The map shows the temperature change over 30 years. In most
+        parts of the world, the temperature has increased by a few degrees and
+        scientists think it will increase in the future.
+      </p>
+    </div>
+    <div class="question-block" data-correct="A">
+      <p>
+        17 What predictions have climate scientists made after studying the
+        global temperature change?
+      </p>
+      <div class="option">
+        <label
+          ><input name="q17" type="radio" value="A" /> The temperature will be
+          higher in most parts of the world.</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q17" type="radio" value="B" /> The temperature will
+          increase in all parts of the world.</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q17" type="radio" value="C" /> The temperature will
+          increase by a few degrees each year.</label
+        >
+      </div>
+    </div>
+    <button onclick="submitAnswers('q11', 7, 'result-III')">
       Submit Part III
     </button>
     <div class="result" id="result-III"></div>
-    <button onclick="resetPart('q11', 5, 'result-III')">Reset Part III</button>
+    <button onclick="resetPart('q11', 7, 'result-III')">Reset Part III</button>
     <!-- PART IV -->
     <h3>IV. Fill in the blank (TWO or THREE words from the text)</h3>
     <div class="passage">
@@ -508,9 +542,9 @@
       swimming with dolphins with a tour group in Australia.
     </div>
     <div class="question-block" data-correct="has increased in">
-      <p>16. Rainfall...............some regions, and decreased in others.</p>
+      <p>18. Rainfall...............some regions, and decreased in others.</p>
       <input
-        name="q16"
+        name="q18"
         placeholder="Your answer here"
         style="width: 90%; margin: 10px 20px; padding: 6px"
         type="text"
@@ -524,11 +558,11 @@
     </div>
     <div class="question-block" data-correct="the changes">
       <p>
-        17. Climate scientists have studied..........in the Earth's temperature
+        19. Climate scientists have studied..........in the Earth's temperature
         and found that it has increased in most parts of the world.
       </p>
       <input
-        name="q17"
+        name="q19"
         placeholder="Your answer here"
         style="width: 90%; margin: 10px 20px; padding: 6px"
         type="text"
@@ -541,11 +575,11 @@
     </div>
     <div class="question-block" data-correct="sea levels">
       <p>
-        18. Polar ice melt causes rising............, leading to coastal
+        20. Polar ice melt causes rising............, leading to coastal
         flooding and home loss for polar animals.
       </p>
       <input
-        name="q18"
+        name="q20"
         placeholder="Your answer here"
         style="width: 90%; margin: 10px 20px; padding: 6px"
         type="text"
@@ -559,11 +593,11 @@
     </div>
     <div class="question-block" data-correct="predict difficult">
       <p>
-        19. Scientists are working to improve their technology to
+        21. Scientists are working to improve their technology to
         ...........weather events.
       </p>
       <input
-        name="q19"
+        name="q21"
         placeholder="Your answer here"
         style="width: 90%; margin: 10px 20px; padding: 6px"
         type="text"
@@ -577,35 +611,7 @@
       so it doesn't change in the future.
     </div>
     <div class="question-block" data-correct="it will be">
-      <p>20. I think.......colder next week.</p>
-      <input
-        name="q20"
-        placeholder="Your answer here"
-        style="width: 90%; margin: 10px 20px; padding: 6px"
-        type="text"
-      />
-    </div>
-    <button onclick="submitTextAnswers(16, 5, 'result-IV')">
-      Submit Part IV
-    </button>
-    <div class="result" id="result-IV"></div>
-    <button onclick="resetPart('q16', 5, 'result-IV')">Reset Part IV</button>
-    <!-- PART V -->
-    <h3>V. Advice using “should”</h3>
-    <div class="question-block" data-correct="will not buy">
-      <p>
-        21. Peter............a house in the city centre because he doesn't have
-        enough money.
-      </p>
-      <input
-        name="q21"
-        placeholder="Your answer here"
-        style="width: 90%; margin: 10px 20px; padding: 6px"
-        type="text"
-      />
-    </div>
-    <div class="question-block" data-correct="It will continue to">
-      <p>22. The temperature won't stop increasing ............... increase.</p>
+      <p>22. I think.......colder next week.</p>
       <input
         name="q22"
         placeholder="Your answer here"
@@ -613,11 +619,15 @@
         type="text"
       />
     </div>
-    <div class="question-block" data-correct="temperature will be">
-      <p>
-        23. This is today's weather forecast for Thai Nguyen.
-        The..........around 25.3°C.
-      </p>
+    <div class="passage">
+      The numbers of wild animals and birds are decreasing, so many cruise
+      companies teach their passengers about the wildlife in Antarctica. They
+      also give money to environmental organizations in the region. These
+      organizations want to protect nature and help the wildlife of Antarctica
+      so it doesn't change in the future.
+    </div>
+    <div class="question-block" data-correct="it will be">
+      <p>23. I think.......colder next week.</p>
       <input
         name="q23"
         placeholder="Your answer here"
@@ -625,9 +635,17 @@
         type="text"
       />
     </div>
-    <div class="question-block" data-correct="won't come to">
+    <button onclick="submitTextAnswers(18, 6, 'result-IV')">
+      Submit Part IV
+    </button>
+    <div class="result" id="result-IV"></div>
+    <button onclick="resetPart('q18', 6, 'result-IV')">Reset Part IV</button>
+    <!-- PART V -->
+    <h3>V. Advice using “should”</h3>
+    <div class="question-block" data-correct="will not buy">
       <p>
-        24. Edmond...............our dinner party tonight because he is busy.
+        24. Peter............a house in the city centre because he doesn't have
+        enough money.
       </p>
       <input
         name="q24"
@@ -636,8 +654,8 @@
         type="text"
       />
     </div>
-    <div class="question-block" data-correct="should go on holiday">
-      <p>25. You ................. by the sea and have some rest. (holiday)</p>
+    <div class="question-block" data-correct="It will continue to">
+      <p>25. The temperature won't stop increasing ............... increase.</p>
       <input
         name="q25"
         placeholder="Your answer here"
@@ -645,11 +663,43 @@
         type="text"
       />
     </div>
-    <button onclick="submitTextAnswers(21, 5, 'result-V')">
+    <div class="question-block" data-correct="temperature will be">
+      <p>
+        26. This is today's weather forecast for Thai Nguyen.
+        The..........around 25.3°C.
+      </p>
+      <input
+        name="q26"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="question-block" data-correct="won't come to">
+      <p>
+        27. Edmond...............our dinner party tonight because he is busy.
+      </p>
+      <input
+        name="q27"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="question-block" data-correct="should go on holiday">
+      <p>28. You ................. by the sea and have some rest. (holiday)</p>
+      <input
+        name="q28"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <button onclick="submitTextAnswers(19, 5, 'result-V')">
       Submit Part V
     </button>
     <div class="result" id="result-V"></div>
-    <button onclick="resetPart('q21', 5, 'result-V')">Reset Part V</button>
+    <button onclick="resetPart('q19', 5, 'result-V')">Reset Part V</button>
     <!-- PART VI -->
     <!-- PART VI -->
     <div class="sentence-ordering" id="part-vi">
@@ -658,7 +708,7 @@
         class="sentence-question"
         data-answer="Will it continue to rain in this area until the end of the week?"
       >
-        <p>25. Put the words in the correct order:</p>
+        <p>29. Put the words in the correct order:</p>
         <p>
           <em
             >Will / it continue / to rain / in this area / until / the end of
@@ -719,7 +769,7 @@
         class="sentence-question"
         data-answer="The Earth's temperature will increase in most parts of the world."
       >
-        <p>26. Put the words in the correct order:</p>
+        <p>30. Put the words in the correct order:</p>
         <p>
           <em
             >The Earth's temperature / will increase / in most parts / of the
@@ -766,7 +816,7 @@
         class="sentence-question"
         data-answer="I think I will move to a warmer country next winter."
       >
-        <p>27. Put the words in the correct order:</p>
+        <p>31. Put the words in the correct order:</p>
         <p>
           <em>I will / move to / a warmer / country / next winter / I think</em>
         </p>
@@ -824,7 +874,7 @@
         class="sentence-question"
         data-answer="There will be longer summers in Asian countries in the future."
       >
-        <p>28. Put the words in the correct order:</p>
+        <p>32. Put the words in the correct order:</p>
         <p>
           <em
             >There / will be / longer summers / in Asian countries / in the
@@ -878,7 +928,7 @@
         class="sentence-question"
         data-answer="I don't think there will be more people living in the city in the future."
       >
-        <p>29. Put the words in the correct order:</p>
+        <p>33. Put the words in the correct order:</p>
         <p>
           <em
             >I don't think / there will be / more people / living in the city /
