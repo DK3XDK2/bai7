@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>English Practice Test – Bài 7</title>
+    <style>
+      .word-bank,
+      .drop-area {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 12px;
+        padding: 10px;
+        border: 1px dashed #aaa;
+        min-height: 50px;
+        background-color: #f9f9f9;
+      }
+
+      .word-bank span,
+      .drop-area span {
+        background-color: #e0f7fa;
+        padding: 6px 10px;
+        border-radius: 4px;
+        cursor: move;
+        user-select: none;
+      }
+
+      .drop-area span {
+        background-color: #d1c4e9;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        background: #fff;
+        max-width: 950px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2,
+      h3 {
+        text-align: center;
+      }
+      h3 {
+        margin-top: 40px;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 5px;
+      }
+      .question-block {
+        margin-bottom: 25px;
+        border: 1px solid #ccc;
+        border-left: 5px solid #007bff;
+        padding: 15px;
+        border-radius: 5px;
+        background: #fafafa;
+      }
+      .question-block p {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .option {
+        padding: 8px 0;
+        margin-left: 20px;
+      }
+      .option input[type="radio"] {
+        margin-right: 8px;
+      }
+      button {
+        display: block;
+        margin: 30px auto 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      .result {
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .sentence-sort {
+        margin-bottom: 30px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+      }
+      .sortable {
+        list-style-type: none;
+        padding: 0;
+        margin: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .sortable li {
+        padding: 6px 12px;
+        background-color: #e0e0e0;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        cursor: move;
+      }
+      .result {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>English Practice Test – Bài 7</h2>
+      <!-- PART I -->
+      <h3>I. Choose the correct English translation</h3>
+      <div class="question-block" data-correct="C">
+        <p>1. 70% bề mặt trái đất là nước.</p>
+        <div class="option">
+          <label
+            ><input name="q1" type="radio" value="A" /> He always buys souvenirs
+            in this shop.</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q1" type="radio" value="B" /> He always buys bags in
+            this shop.</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q1" type="radio" value="C" /> He always sells
+            souvenirs to this shop.</label
+          >
+        </div>
+      </div>
+      <div class="question-block" data-correct="B">
+        <p>2. Anh ấy cao 1m75 và nặng 65 kg.</p>
+        <div class="option">
+          <label
+            ><input name="q2" type="radio" value="A" /> Mia often books hotel
+            rooms online.</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q2" type="radio" value="B" /> Mia often books train
+            tickets online.</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q2" type="radio" value="C" /> Mia often cleans hotel
+            rooms online.</label
+          >
+        </div>
+      </div>
+      <div class="question-block" data-correct="B">
+        <p>3. Cực Bắc cách Cực Nam 20,000 km.</p>
+        <div class="option">
+          <label
+            ><input name="q3" type="radio" value="A" /> I have just booked a
+            double room in Nha Trang this weekend.</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q3" type="radio" value="B" /> I have just booked a
+            return ticket to Nha Trang this weekend.</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q3" type="radio" value="C" /> I have just booked a
+            single ticket to Nha Trang this weekend.</label
+          >
+        </div>
+      </div>
+      <div class="question-block" data-correct="C">
+        <p>4. Hôm nay trời lạnh 14 độ.</p>
+        <div class="option">
+          <label
+            ><input name="q4" type="radio" value="A" /> I normally find a hotel
+            after I arrive.</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q4" type="radio" value="B" /> I often book a hotel
+            after I arrive.</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q4" type="radio" value="C" /> I never find a hotel
+            before I arrive.</label
+          >
+        </div>
+      </div>
+      <div class="question-block" data-correct="C">
+        <p>5. Nhiệt độ ở tâm trái đất là bao nhiêu?</p>
+        <div class="option">
+          <label
+            ><input name="q5" type="radio" value="A" /> We never buy food at
+            local shops when we travel home from holiday.</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q5" type="radio" value="B" /> We usually buy food at
+            local markets when we go on holiday.</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q5" type="radio" value="C" /> We usually buy souvenirs
+            at local markets when we go on holiday.</label
+          >
+        </div>
+      </div>
+      <button onclick="submitAnswers('q1', 5, 'result-I')">
+        Submit Part I
+      </button>
+      <div class="result" id="result-I"></div>
+      <button onclick="resetPart('q1', 5, 'result-I')">Reset Part I</button>
+      <!-- PART II -->
+      <h3>II. Choose the best option A, B or C to complete the sentences</h3>
+      <div class="question-block" data-correct="C">
+        <p>6. It .......hotter in my country in the future.</p>
+        <div class="option">
+          <label
+            ><input name="q6" type="radio" value="A" /> Should hang I</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q6" type="radio" value="B" /> Should I hang</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q6" type="radio" value="C" /> I should hang</label
+          >
+        </div>
+      </div>
+      <div class="question-block" data-correct="C">
+        <p>
+          7. A: ................rainy this afternoon? B: No, it won't. It will
+          be snowy.
+        </p>
+        <div class="option">
+          <label><input name="q7" type="radio" value="A" /> shoulds see</label>
+        </div>
+        <div class="option">
+          <label
+            ><input name="q7" type="radio" value="B" /> should seeing</label
+          >
+        </div>
+        <div class="option">
+          <label><input name="q7" type="radio" value="C" /> should see</label>
+        </div>
+      </div>
+      <div class="question-block" data-correct="A">
+        <p>
+          8. Climate experts predict the rainfall in this region...............
+          in the next 30 years.
+        </p>
+        <div class="option">
+          <label><input name="q8" type="radio" value="A" /> should take</label>
+        </div>
+        <div class="option">
+          <label><input name="q8" type="radio" value="B" /> shoulds take</label>
+        </div>
+        <div class="option">
+          <label
+            ><input name="q8" type="radio" value="C" /> should taking</label
+          >
+        </div>
+      </div>
+      <div class="question-block" data-correct="B">
+        <p>
+          9. A: ............... to another country? B: No, they won't. They will
+          continue to live here.
+        </p>
+        <div class="option">
+          <label
+            ><input name="q9" type="radio" value="A" /> should not going</label
+          >
+        </div>
+        <div class="option">
+          <label><input name="q9" type="radio" value="B" /> shouldn't go</label>
+        </div>
+        <div class="option">
+          <label
+            ><input name="q9" type="radio" value="C" /> shouldn't be go</label
+          >
+        </div>
+      </div>
+      <div class="question-block" data-correct="C">
+        <p>10. It will be cold, but it..............snowy tomorrow.</p>
+        <div class="option">
+          <label
+            ><input name="q10" type="radio" value="A" /> do I should stay</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q10" type="radio" value="B" /> I should stay</label
+          >
+        </div>
+        <div class="option">
+          <label
+            ><input name="q10" type="radio" value="C" /> should I stay</label
+          >
+        </div>
+      </div>
+      <button onclick="submitAnswers('q6', 5, 'result-II')">
+        Submit Part II
+      </button>
+      <div class="result" id="result-II"></div>
+      <button onclick="resetPart('q6', 5, 'result-II')">Reset Part II</button>
+    </div>
+    <!-- PART III -->
+    <h3>III. Reading comprehension</h3>
+    <!-- Passage 1 -->
+    <div class="reading-passage">
+      <p>
+        Fifty years ago, nobody lived in Antarctica but now between 1,000 and
+        5,000 scientists live and work there all year, and over 50,000 tourists
+        visit every year. The main way for tourists to visit the continent is by
+        ship. There are no hotels, so cruise holidays are very popular. As a
+        result of so many tourists, some people think the numbers of wild
+        animals and birds are decreasing.
+      </p>
+    </div>
+    <div class="question-block" data-correct="A">
+      <p>11. What trouble does ice melting cause to some animals?</p>
+      <div class="option">
+        <label
+          ><input name="q11" type="radio" value="A" /> There are more
+          hotels.</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q11" type="radio" value="B" /> There are more
+          people.</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q11" type="radio" value="C" /> There are more wild
+          animals and birds.</label
+        >
+      </div>
+    </div>
+    <!-- Passage 2 -->
+    <div class="reading-passage">
+      <p>
+        I don't like holidays with hotels, beaches and swimming pools, and I'm
+        not interested in sightseeing in old cities. So for my next holiday, I
+        plan to do something exciting outdoors. There are so many tour companies
+        on the internet offering that type of holiday. One company takes
+        backpacking trips over the Andes of South America. Another company has
+        animal safaris in Africa.
+      </p>
+    </div>
+    <div class="question-block" data-correct="A">
+      <p>12. What is mainly causing climate change?</p>
+      <div class="option">
+        <label
+          ><input name="q12" type="radio" value="A" /> sightseeing holidays in
+          old cities</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q12" type="radio" value="B" /> relaxing holidays with
+          hotels and beaches</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q12" type="radio" value="C" /> holidays with outdoor
+          activities</label
+        >
+      </div>
+    </div>
+    <!-- Passage 3 -->
+    <div class="reading-passage">
+      <p>
+        I don't like holidays with hotels, beaches and swimming pools, and I'm
+        not interested in sightseeing in old cities. When I choose a holiday, I
+        don't want to go somewhere and see lots of other tourists. I want to be
+        the only person there, which is difficult these days. Is there anywhere
+        in the world without other people? What about Antarctica?
+      </p>
+    </div>
+    <div class="question-block" data-correct="C">
+      <p>13. What do climate scientists predict for rainfall in Venezuela?</p>
+      <div class="option">
+        <label
+          ><input name="q13" type="radio" value="A" /> a crowded city with many
+          tourists</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q13" type="radio" value="B" /> a quiet place without
+          other people</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q13" type="radio" value="C" /> a holiday with hotels and
+          beaches</label
+        >
+      </div>
+    </div>
+    <!-- Passage 4 -->
+    <div class="reading-passage">
+      <p>
+        When I choose a holiday, I don't want to go somewhere and see lots of
+        other tourists. I want to be the only person there. Antarctica should be
+        perfect for me. It's huge, it's quiet and it's thousands of kilometres
+        away from other countries. It doesn't have a government and there are no
+        cities, so there's no pollution or noisy traffic. It has lots of
+        wildlife.
+      </p>
+    </div>
+    <div class="question-block" data-correct="B">
+      <p>14. How different is the Arctic now from 56 million years ago?</p>
+      <div class="option">
+        <label
+          ><input name="q14" type="radio" value="A" /> Because it is thousands
+          of kilometres from wildlife.</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q14" type="radio" value="B" /> Because there are
+          probably not many people there.</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q14" type="radio" value="C" /> Because there are lots of
+          people and cities there.</label
+        >
+      </div>
+    </div>
+    <!-- Passage 5 -->
+    <div class="reading-passage">
+      <p>
+        There are no hotels in Antarctica, so cruise holidays are very popular.
+        As a result of so many tourists, some people think the numbers of wild
+        animals and birds are decreasing. Many cruise companies teach their
+        passengers about the wildlife in Antarctica and give money to
+        environmental organizations in the region. These organizations want to
+        help the nature and wildlife of Antarctica so it doesn't change in the
+        future.
+      </p>
+    </div>
+    <div class="question-block" data-correct="main cause">
+      <p>
+        15. The Earth is getting warmer very quickly. The...............is human
+        actions, which lead to the greenhouse effect.
+      </p>
+      <div class="option">
+        <label
+          ><input name="q15" type="radio" value="A" /> They give money to
+          passengers to protect the environment.</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q15" type="radio" value="B" /> They take more tourists
+          to visit Antarctica.</label
+        >
+      </div>
+      <div class="option">
+        <label
+          ><input name="q15" type="radio" value="C" /> They help tourists
+          understand wildlife.</label
+        >
+      </div>
+    </div>
+    <button onclick="submitAnswers('q11', 5, 'result-III')">
+      Submit Part III
+    </button>
+    <div class="result" id="result-III"></div>
+    <button onclick="resetPart('q11', 5, 'result-III')">Reset Part III</button>
+    <!-- PART IV -->
+    <h3>IV. Fill in the blank (TWO or THREE words from the text)</h3>
+    <div class="passage">
+      There are so many tour companies on the internet offering holidays
+      outdoors. One company takes backpacking trips over the Andes of South
+      America. Another company has animal safaris in Africa. And you can even go
+      swimming with dolphins with a tour group in Australia.
+    </div>
+    <div class="question-block" data-correct="has increased in">
+      <p>16. Rainfall...............some regions, and decreased in others.</p>
+      <input
+        name="q16"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="passage">
+      When I choose a holiday, I don't want to go somewhere and see lots of
+      other tourists. I want to be the only person there. Antarctica should be
+      perfect for me. It's huge, it's quiet and it's thousands of kilometres
+      away from other countries.
+    </div>
+    <div class="question-block" data-correct="the changes">
+      <p>
+        17. Climate scientists have studied..........in the Earth's temperature
+        and found that it has increased in most parts of the world.
+      </p>
+      <input
+        name="q17"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="passage">
+      Like many places in the world, Antarctica is changing. Fifty years ago,
+      nobody lived here but now between 1,000 and 5,000 scientists live and work
+      there all year, and over 50,000 tourists visit every year.
+    </div>
+    <div class="question-block" data-correct="sea levels">
+      <p>
+        18. Polar ice melt causes rising............, leading to coastal
+        flooding and home loss for polar animals.
+      </p>
+      <input
+        name="q18"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="passage">
+      There are no hotels, so cruise holidays are very popular in Antarctica.
+      You can leave the ship during the day and there are guided tours of areas
+      with wildlife. As a result of so many tourists, some people think the
+      numbers of wild animals and birds are decreasing.
+    </div>
+    <div class="question-block" data-correct="predict difficult">
+      <p>
+        19. Scientists are working to improve their technology to
+        ...........weather events.
+      </p>
+      <input
+        name="q19"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="passage">
+      The numbers of wild animals and birds are decreasing, so many cruise
+      companies teach their passengers about the wildlife in Antarctica. They
+      also give money to environmental organizations in the region. These
+      organizations want to protect nature and help the wildlife of Antarctica
+      so it doesn't change in the future.
+    </div>
+    <div class="question-block" data-correct="it will be">
+      <p>20. I think.......colder next week.</p>
+      <input
+        name="q20"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <button onclick="submitTextAnswers(16, 5, 'result-IV')">
+      Submit Part IV
+    </button>
+    <div class="result" id="result-IV"></div>
+    <button onclick="resetPart('q16', 5, 'result-IV')">Reset Part IV</button>
+    <!-- PART V -->
+    <h3>V. Advice using “should”</h3>
+    <div class="question-block" data-correct="will not buy">
+      <p>
+        21. Peter............a house in the city centre because he doesn't have
+        enough money.
+      </p>
+      <input
+        name="q21"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="question-block" data-correct="It will continue to">
+      <p>22. The temperature won't stop increasing ............... increase.</p>
+      <input
+        name="q22"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="question-block" data-correct="temperature will be">
+      <p>
+        23. This is today's weather forecast for Thai Nguyen.
+        The..........around 25.3°C.
+      </p>
+      <input
+        name="q23"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="question-block" data-correct="won't come to">
+      <p>
+        24. Edmond...............our dinner party tonight because he is busy.
+      </p>
+      <input
+        name="q24"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="question-block" data-correct="should go on holiday">
+      <p>25. You ................. by the sea and have some rest. (holiday)</p>
+      <input
+        name="q25"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <button onclick="submitTextAnswers(21, 5, 'result-V')">
+      Submit Part V
+    </button>
+    <div class="result" id="result-V"></div>
+    <button onclick="resetPart('q21', 5, 'result-V')">Reset Part V</button>
+    <!-- PART VI -->
+    <!-- PART VI -->
+    <div class="sentence-ordering" id="part-vi">
+      <h3>VI. Sentence ordering</h3>
+      <div
+        class="sentence-question"
+        data-answer="Will it continue to rain in this area until the end of the week?"
+      >
+        <p>25. Put the words in the correct order:</p>
+        <p>
+          <em
+            >Will / it continue / to rain / in this area / until / the end of
+            the week?</em
+          >
+        </p>
+        <div
+          class="drop-area"
+          ondragover="allowDrop(event)"
+          ondrop="drop(event)"
+        ></div>
+        <div class="word-bank">
+          <span
+            draggable="true"
+            id="drag-item-1"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >Will</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-2"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >it continue</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-3"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >to rain</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-4"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >in this area</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-5"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >until</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-6"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >the end of the week?</span
+          >
+        </div>
+      </div>
+      <div
+        class="sentence-question"
+        data-answer="The Earth's temperature will increase in most parts of the world."
+      >
+        <p>26. Put the words in the correct order:</p>
+        <p>
+          <em
+            >The Earth's temperature / will increase / in most parts / of the
+            world.</em
+          >
+        </p>
+        <div
+          class="drop-area"
+          ondragover="allowDrop(event)"
+          ondrop="drop(event)"
+        ></div>
+        <div class="word-bank">
+          <span
+            draggable="true"
+            id="drag-item-7"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >The Earth's temperature</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-8"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >will increase</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-9"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >in most parts</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-10"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >of the world.</span
+          >
+        </div>
+      </div>
+      <div
+        class="sentence-question"
+        data-answer="I think I will move to a warmer country next winter."
+      >
+        <p>27. Put the words in the correct order:</p>
+        <p>
+          <em>I will / move to / a warmer / country / next winter / I think</em>
+        </p>
+        <div
+          class="drop-area"
+          ondragover="allowDrop(event)"
+          ondrop="drop(event)"
+        ></div>
+        <div class="word-bank">
+          <span
+            draggable="true"
+            id="drag-item-11"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >I think</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-12"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >I will</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-13"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >move to</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-14"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >a warmer</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-15"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >country</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-16"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >next winter</span
+          >
+        </div>
+      </div>
+      <div
+        class="sentence-question"
+        data-answer="There will be longer summers in Asian countries in the future."
+      >
+        <p>28. Put the words in the correct order:</p>
+        <p>
+          <em
+            >There / will be / longer summers / in Asian countries / in the
+            future</em
+          >
+        </p>
+        <div
+          class="drop-area"
+          ondragover="allowDrop(event)"
+          ondrop="drop(event)"
+        ></div>
+        <div class="word-bank">
+          <span
+            draggable="true"
+            id="drag-item-17"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >There</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-18"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >will be</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-19"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >longer summers</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-20"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >in Asian countries</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-21"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >in the future</span
+          >
+        </div>
+      </div>
+      <div
+        class="sentence-question"
+        data-answer="I don't think there will be more people living in the city in the future."
+      >
+        <p>29. Put the words in the correct order:</p>
+        <p>
+          <em
+            >I don't think / there will be / more people / living in the city /
+            in the future.</em
+          >
+        </p>
+        <div
+          class="drop-area"
+          ondragover="allowDrop(event)"
+          ondrop="drop(event)"
+        ></div>
+        <div class="word-bank">
+          <span
+            draggable="true"
+            id="drag-item-22"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >I don't think</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-23"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >there will be</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-24"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >more people</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-25"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >living in the city</span
+          >
+          <span
+            draggable="true"
+            id="drag-item-26"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >in the future</span
+          >
+        </div>
+      </div>
+      <button onclick="checkSentenceOrdering()">Submit Part VI</button>
+      <div class="result" id="result-VI"></div>
+      <button onclick="resetSentenceOrdering()">Reset Part VI</button>
+    </div>
+    <script>
+      function submitTextAnswers(start, count, resultId) {
+        let score = 0;
+        for (let i = 0; i < count; i++) {
+          const qNum = start + i;
+          const input = document.querySelector('input[name="q' + qNum + '"]');
+          const block = input.closest(".question-block");
+          const correct = block
+            .getAttribute("data-correct")
+            .toLowerCase()
+            .trim();
+          const userAnswer = input.value.toLowerCase().trim();
+          if (userAnswer === correct) score++;
+        }
+        document.getElementById(
+          resultId
+        ).innerText = `You scored ${score}/${count}`;
+      }
+    </script>
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("text/plain", ev.target.id);
+        setTimeout(() => {
+          ev.target.style.display = "none";
+        }, 0);
+      }
+
+      function dragEnd(ev) {
+        ev.target.style.display = "inline-block";
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        const id = ev.dataTransfer.getData("text/plain");
+        const dragged = document.getElementById(id);
+
+        let target = ev.target;
+        while (
+          target &&
+          !target.classList.contains("drop-area") &&
+          !target.classList.contains("word-bank")
+        ) {
+          target = target.parentElement;
+        }
+
+        if (target && dragged) {
+          target.appendChild(dragged);
+          dragged.style.display = "inline-block";
+        }
+      }
+    </script>
+    <style>
+      .hidden-dragged {
+        display: none !important;
+      }
+    </style>
+    <script>
+      function normalizeSentence(sentence) {
+        return sentence
+          .toLowerCase()
+          .replace(/[.?!]/g, "")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function checkSentenceOrdering() {
+        const questions = document.querySelectorAll(".sentence-question");
+        let allCorrect = true;
+
+        questions.forEach((q) => {
+          const correct = normalizeSentence(q.getAttribute("data-answer"));
+          const dropArea = q.querySelector(".drop-area");
+          const words = Array.from(dropArea.children).map((el) =>
+            el.textContent.trim()
+          );
+          const userSentence = normalizeSentence(words.join(" "));
+          if (userSentence !== correct) {
+            allCorrect = false;
+          }
+        });
+
+        const result = document.getElementById("result-VI");
+        result.textContent = allCorrect
+          ? "Part VI: All correct! ✅"
+          : "Part VI: Some sentences are incorrect. ❌";
+        result.style.color = allCorrect ? "green" : "red";
+      }
+    </script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".word-bank").forEach((bank) => {
+          const spans = Array.from(bank.children);
+          for (let i = spans.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            bank.appendChild(spans[j]);
+          }
+        });
+      });
+    </script>
+    <script>
+      function normalizeSentence(sentence) {
+        return sentence
+          .toLowerCase()
+          .replace(/[.?!]/g, "")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function checkSentenceOrdering() {
+        const questions = document.querySelectorAll(".sentence-question");
+        let correctCount = 0;
+
+        questions.forEach((q) => {
+          const correct = normalizeSentence(q.getAttribute("data-answer"));
+          const dropArea = q.querySelector(".drop-area");
+          const words = Array.from(dropArea.children).map((el) =>
+            el.textContent.trim()
+          );
+          const userSentence = normalizeSentence(words.join(" "));
+          if (userSentence === correct) {
+            correctCount++;
+          }
+        });
+
+        const total = questions.length;
+        const result = document.getElementById("result-VI");
+        result.textContent = `Part VI: You got ${correctCount}/${total} correct.`;
+        result.style.color = correctCount === total ? "green" : "red";
+      }
+    </script>
+    <script>
+      function normalizeSentence(sentence) {
+        return sentence
+          .toLowerCase()
+          .replace(/[.?!]/g, "")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function checkSentenceOrdering() {
+        const questions = document.querySelectorAll(".sentence-question");
+        let correctCount = 0;
+
+        questions.forEach((q) => {
+          const correct = normalizeSentence(q.getAttribute("data-answer"));
+          const dropArea = q.querySelector(".drop-area");
+          const words = Array.from(dropArea.children).map((el) =>
+            el.textContent.trim()
+          );
+          const userSentence = normalizeSentence(words.join(" "));
+
+          if (userSentence === correct) {
+            correctCount++;
+            dropArea.style.backgroundColor = "#d4edda"; // light green
+            dropArea.style.border = "2px solid #28a745";
+          } else {
+            dropArea.style.backgroundColor = "#f8d7da"; // light red
+            dropArea.style.border = "2px solid #dc3545";
+          }
+        });
+
+        const total = questions.length;
+        const result = document.getElementById("result-VI");
+        result.textContent = `Part VI: You got ${correctCount}/${total} correct.`;
+        result.style.color = correctCount === total ? "green" : "red";
+      }
+    </script>
+    <script>
+      function resetTextInputs(start, count, resultId) {
+        for (let i = 0; i < count; i++) {
+          const qNum = start + i;
+          const input = document.querySelector('input[name="q' + qNum + '"]');
+          if (input) input.value = "";
+        }
+        const result = document.getElementById(resultId);
+        if (result) result.textContent = "";
+      }
+
+      function submitAnswers(firstName, count, resultId) {
+        let score = 0;
+        for (let i = 0; i < count; i++) {
+          const name =
+            firstName.slice(0, 1) + (parseInt(firstName.slice(1)) + i);
+          const input = document.querySelector('input[name="' + name + '"]');
+          if (!input) continue;
+          const block = input.closest(".question-block");
+          const correct = block.getAttribute("data-correct");
+          const selected = block.querySelector(
+            'input[name="' + name + '"]:checked'
+          );
+          if (selected && selected.value === correct) {
+            score++;
+            block.style.backgroundColor = "#d4edda";
+            block.style.border = "2px solid #28a745";
+          } else {
+            block.style.backgroundColor = "#f8d7da";
+            block.style.border = "2px solid #dc3545";
+          }
+        }
+        document.getElementById(
+          resultId
+        ).innerText = `You scored ${score}/${count}`;
+      }
+
+      function submitTextAnswers(start, count, resultId) {
+        let score = 0;
+        for (let i = 0; i < count; i++) {
+          const qNum = start + i;
+          const input = document.querySelector('input[name="q' + qNum + '"]');
+          const block = input.closest(".question-block");
+          const correct = block
+            .getAttribute("data-correct")
+            .toLowerCase()
+            .trim();
+          const userAnswer = input.value.toLowerCase().trim();
+          if (userAnswer === correct) {
+            score++;
+            block.style.backgroundColor = "#d4edda";
+            block.style.border = "2px solid #28a745";
+          } else {
+            block.style.backgroundColor = "#f8d7da";
+            block.style.border = "2px solid #dc3545";
+          }
+        }
+        document.getElementById(
+          resultId
+        ).innerText = `You scored ${score}/${count}`;
+      }
+    </script>
+    <script>
+      function resetSentenceOrdering() {
+        document.querySelectorAll(".sentence-question").forEach((q) => {
+          const wordBank = q.querySelector(".word-bank");
+          const dropArea = q.querySelector(".drop-area");
+          const spans = Array.from(dropArea.children);
+          spans.forEach((span) => wordBank.appendChild(span));
+          dropArea.style.backgroundColor = "#f9f9f9";
+          dropArea.style.border = "1px dashed #aaa";
+        });
+        const result = document.getElementById("result-VI");
+        if (result) result.textContent = "";
+      }
+    </script>
+    <script>
+      function resetPart(firstName, count, resultId) {
+        for (let i = 0; i < count; i++) {
+          const name =
+            firstName.slice(0, 1) + (parseInt(firstName.slice(1)) + i);
+          const inputs = document.querySelectorAll(
+            'input[name="' + name + '"]'
+          );
+          inputs.forEach((input) => (input.checked = false));
+          const block =
+            inputs.length > 0 ? inputs[0].closest(".question-block") : null;
+          if (block) {
+            block.style.backgroundColor = "#fafafa";
+            block.style.border = "1px solid #ccc";
+            block.style.borderLeft = "5px solid #007bff";
+          }
+        }
+        const result = document.getElementById(resultId);
+        if (result) {
+          result.textContent = "";
+          result.style.color = "";
+        }
+      }
+
+      function submitAnswers(firstName, count, resultId) {
+        let score = 0;
+        for (let i = 0; i < count; i++) {
+          const name =
+            firstName.slice(0, 1) + (parseInt(firstName.slice(1)) + i);
+          const input = document.querySelector('input[name="' + name + '"]');
+          if (!input) continue;
+          const block = input.closest(".question-block");
+          const correct = block.getAttribute("data-correct");
+          const selected = block.querySelector(
+            'input[name="' + name + '"]:checked'
+          );
+          if (selected && selected.value === correct) {
+            score++;
+            block.style.backgroundColor = "#d4edda";
+            block.style.border = "2px solid #28a745";
+          } else {
+            block.style.backgroundColor = "#f8d7da";
+            block.style.border = "2px solid #dc3545";
+          }
+        }
+        const result = document.getElementById(resultId);
+        if (result) {
+          result.innerText = `You scored ${score}/${count}`;
+          result.style.color = score === count ? "green" : "red";
+        }
+      }
+
+      function submitTextAnswers(start, count, resultId) {
+        let score = 0;
+        for (let i = 0; i < count; i++) {
+          const qNum = start + i;
+          const input = document.querySelector('input[name="q' + qNum + '"]');
+          const block = input.closest(".question-block");
+          const correct = block
+            .getAttribute("data-correct")
+            .toLowerCase()
+            .trim();
+          const userAnswer = input.value.toLowerCase().trim();
+          if (userAnswer === correct) {
+            score++;
+            block.style.backgroundColor = "#d4edda";
+            block.style.border = "2px solid #28a745";
+          } else {
+            block.style.backgroundColor = "#f8d7da";
+            block.style.border = "2px solid #dc3545";
+          }
+        }
+        const result = document.getElementById(resultId);
+        if (result) {
+          result.innerText = `You scored ${score}/${count}`;
+          result.style.color = score === count ? "green" : "red";
+        }
+      }
+    </script>
+  </body>
+</html>
