@@ -4,8 +4,39 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>English Practice Test – Bài 7</title>
+    <title>English Practice Test – Bài 6</title>
     <style>
+      #popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #popup-box {
+        background: white;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        width: 90%;
+        max-width: 400px;
+        font-family: Arial, sans-serif;
+      }
+
+      body.popup-active *:not(#popup-overlay):not(#popup-overlay *) {
+        pointer-events: none;
+        user-select: none;
+      }
+      body.popup-active {
+        overflow: hidden; /* Ngăn cuộn */
+      }
+
       .word-bank,
       .drop-area {
         display: flex;
@@ -115,214 +146,310 @@
         margin-top: 15px;
         font-weight: bold;
       }
+      .reading-passage {
+        background-color: #f0f8ff;
+        border: 1px solid #007acc;
+        padding: 16px;
+        margin: 24px 0 12px 0;
+        border-radius: 8px;
+        font-style: normal;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #003366;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .reading-passage::before {
+        content: "📘 Reading passage:";
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #005599;
+      }
+      .passage {
+        background-color: #fff9e6;
+        border: 1px solid #ffc107;
+        padding: 16px;
+        margin: 24px 0 12px 0;
+        border-radius: 8px;
+        font-style: normal;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #5a4300;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+      }
+
+      .passage::before {
+        content: "📖 Read this text:";
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #cc8400;
+      }
+      .shufflable {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 12px;
+        background-color: #f8f9fa;
+        border: 1px dashed #aaa;
+        border-radius: 8px;
+        font-style: normal;
+        margin-bottom: 16px;
+      }
+
+      .shufflable span {
+        display: inline-block;
+        background-color: #e7f1ff;
+        color: #003366;
+        padding: 6px 10px;
+        border: 1px solid #99c;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-family: "Segoe UI", sans-serif;
+      }
     </style>
   </head>
   <body>
+    <!-- Popup Overlay -->
+    <div id="popup-overlay" style="display: none">
+      <div id="popup-box">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <strong>🔔 Thông báo</strong>
+          <button
+            onclick="closePopup()"
+            style="
+              border: none;
+              background: transparent;
+              font-size: 20px;
+              cursor: pointer;
+            "
+          >
+            ×
+          </button>
+        </div>
+        <p>
+          <b style="color: teal"
+            >Trang web hiện vẫn đang trong quá trình hoàn thiện và ko dùng trên
+            đth, có thể còn một số lỗi hoặc hiển thị chưa chính xác.</b
+          >
+        </p>
+        <p>
+          <b style="color: teal"
+            >Mong mọi người thông cảm! Nếu cần hỗ trợ, vui lòng liên hệ:</b
+          >
+          <b style="color: #c0392b">https://www.facebook.com/vu.q.huy.795955</b>
+        </p>
+        <button
+          onclick="closeFor2Hours()"
+          style="
+            margin-top: 10px;
+            background: #c0392b;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+          "
+        >
+          Không hiển thị lại trong 2 giờ
+        </button>
+      </div>
+    </div>
     <div class="container">
-      <h2>English Practice Test – Bài 7</h2>
+      <h2>English Practice Test – Bài 6</h2>
       <!-- PART I -->
       <h3>I. Choose the correct English translation</h3>
-      <div class="question-block" data-correct="C">
-        <p>1. 70% bề mặt trái đất là nước.</p>
-        <div class="option">
-          <label
-            ><input name="q1" type="radio" value="A" /> He always buys souvenirs
-            in this shop.</label
-          >
+      <div id="part-I">
+        <div class="question-block" data-correct="C">
+          <p>1. 70% bề mặt trái đất là nước.</p>
+          <div class="option">
+            <label
+              ><input name="q1" type="radio" value="A" /> 70 area of the Earth's
+              surface is water.
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q1" type="radio" value="B" /> 70 kilometres of the
+              Earth's surface is water.
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q1" type="radio" value="C" /> 70 percent of the
+              Earth's surface is water.</label
+            >
+          </div>
         </div>
-        <div class="option">
-          <label
-            ><input name="q1" type="radio" value="B" /> He always buys bags in
-            this shop.</label
-          >
+        <div class="question-block" data-correct="B">
+          <p>2. Anh ấy cao 1m75 và nặng 65 kg.</p>
+          <div class="option">
+            <label
+              ><input name="q2" type="radio" value="A" /> He is 1.75 metres deep
+              and weighs 65 kilograms.</label
+            >
+          </div>
+          <div class="option">
+            <label
+              ><input name="q2" type="radio" value="B" /> He is 1.75 metres tall
+              and weighs 65 kilograms.
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q2" type="radio" value="C" /> He is 1.75 kilograms
+              tall and weighs 65 metres.</label
+            >
+          </div>
         </div>
-        <div class="option">
-          <label
-            ><input name="q1" type="radio" value="C" /> He always sells
-            souvenirs to this shop.</label
-          >
+        <div class="question-block" data-correct="C">
+          <p>3. Hôm nay trời lạnh 14 độ.</p>
+          <div class="option">
+            <label
+              ><input name="q3" type="radio" value="A" /> It is cold today at 14
+              percentage.
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q3" type="radio" value="B" /> It is cold today at 14
+              temperature.
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q3" type="radio" value="C" /> It is cold today at 14
+              degrees.</label
+            >
+          </div>
         </div>
-      </div>
-      <div class="question-block" data-correct="B">
-        <p>2. Anh ấy cao 1m75 và nặng 65 kg.</p>
-        <div class="option">
-          <label
-            ><input name="q2" type="radio" value="A" /> Mia often books hotel
-            rooms online.</label
-          >
-        </div>
-        <div class="option">
-          <label
-            ><input name="q2" type="radio" value="B" /> Mia often books train
-            tickets online.</label
-          >
-        </div>
-        <div class="option">
-          <label
-            ><input name="q2" type="radio" value="C" /> Mia often cleans hotel
-            rooms online.</label
-          >
-        </div>
-      </div>
-      <div class="question-block" data-correct="B">
-        <p>3. Cực Bắc cách Cực Nam 20,000 km.</p>
-        <div class="option">
-          <label
-            ><input name="q3" type="radio" value="A" /> I have just booked a
-            double room in Nha Trang this weekend.</label
-          >
-        </div>
-        <div class="option">
-          <label
-            ><input name="q3" type="radio" value="B" /> I have just booked a
-            return ticket to Nha Trang this weekend.</label
-          >
-        </div>
-        <div class="option">
-          <label
-            ><input name="q3" type="radio" value="C" /> I have just booked a
-            single ticket to Nha Trang this weekend.</label
-          >
-        </div>
-      </div>
-      <div class="question-block" data-correct="C">
-        <p>4. Hôm nay trời lạnh 14 độ.</p>
-        <div class="option">
-          <label
-            ><input name="q4" type="radio" value="A" /> I normally find a hotel
-            after I arrive.</label
-          >
-        </div>
-        <div class="option">
-          <label
-            ><input name="q4" type="radio" value="B" /> I often book a hotel
-            after I arrive.</label
-          >
-        </div>
-        <div class="option">
-          <label
-            ><input name="q4" type="radio" value="C" /> I never find a hotel
-            before I arrive.</label
-          >
-        </div>
-      </div>
-      <div class="question-block" data-correct="C">
-        <p>5. Nhiệt độ ở tâm trái đất là bao nhiêu?</p>
-        <div class="option">
-          <label
-            ><input name="q5" type="radio" value="A" /> We never buy food at
-            local shops when we travel home from holiday.</label
-          >
-        </div>
-        <div class="option">
-          <label
-            ><input name="q5" type="radio" value="B" /> We usually buy food at
-            local markets when we go on holiday.</label
-          >
-        </div>
-        <div class="option">
-          <label
-            ><input name="q5" type="radio" value="C" /> We usually buy souvenirs
-            at local markets when we go on holiday.</label
-          >
+        <div class="question-block" data-correct="C">
+          <p>4. Nhiệt độ ở tâm trái đất là bao nhiêu?</p>
+          <div class="option">
+            <label
+              ><input name="q4" type="radio" value="A" /> How many temperature
+              is in the Earth's center?
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q4" type="radio" value="B" /> How many degrees does
+              the Earth's center have?
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q4" type="radio" value="C" /> What is the
+              temperature at the Earth's center?</label
+            >
+          </div>
         </div>
       </div>
-      <button onclick="submitAnswers('q1', 5, 'result-I')">
+
+      <button onclick="submitAnswers('q1', 4, 'result-I')">
         Submit Part I
       </button>
       <div class="result" id="result-I"></div>
-      <button onclick="resetPart('q1', 5, 'result-I')">Reset Part I</button>
+      <button onclick="resetPart('q1', 4, 'result-I')">Reset Part I</button>
       <!-- PART II -->
       <h3>II. Choose the best option A, B or C to complete the sentences</h3>
-      <div class="question-block" data-correct="C">
-        <p>6. It .......hotter in my country in the future.</p>
-        <div class="option">
-          <label
-            ><input name="q6" type="radio" value="A" /> Should hang I</label
-          >
+      <div id="part-II">
+        <div class="question-block" data-correct="C">
+          <p>6. It .......hotter in my country in the future.</p>
+          <div class="option">
+            <label><input name="q6" type="radio" value="A" /> Is</label>
+          </div>
+          <div class="option">
+            <label><input name="q6" type="radio" value="B" /> Will is</label>
+          </div>
+          <div class="option">
+            <label><input name="q6" type="radio" value="C" /> Will be</label>
+          </div>
         </div>
-        <div class="option">
-          <label
-            ><input name="q6" type="radio" value="B" /> Should I hang</label
-          >
+        <div class="question-block" data-correct="C">
+          <p>
+            7. A: ................rainy this afternoon? B: No, it won't. It will
+            be snowy.
+          </p>
+          <div class="option">
+            <label><input name="q7" type="radio" value="A" /> Is it</label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q7" type="radio" value="B" /> Is going to be</label
+            >
+          </div>
+          <div class="option">
+            <label
+              ><input name="q7" type="radio" value="C" /> Will it be
+            </label>
+          </div>
         </div>
-        <div class="option">
-          <label
-            ><input name="q6" type="radio" value="C" /> I should hang</label
-          >
+        <div class="question-block" data-correct="A">
+          <p>
+            8. Climate experts predict the rainfall in this
+            region............... in the next 30 years.
+          </p>
+          <div class="option">
+            <label
+              ><input name="q8" type="radio" value="A" /> Will decrease</label
+            >
+          </div>
+          <div class="option">
+            <label
+              ><input name="q8" type="radio" value="B" /> Is decreasing</label
+            >
+          </div>
+          <div class="option">
+            <label
+              ><input name="q8" type="radio" value="C" /> Will be
+              decrease</label
+            >
+          </div>
+        </div>
+        <div class="question-block" data-correct="B">
+          <p>
+            9. Climate experts predict the rainfall in this
+            region............... in the next 30 years.
+          </p>
+          <div class="option">
+            <label
+              ><input name="q9" type="radio" value="A" /> Will they moving
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q9" type="radio" value="B" /> Will they move
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q9" type="radio" value="C" /> Are they moving</label
+            >
+          </div>
+        </div>
+        <div class="question-block" data-correct="C">
+          <p>10. It will be cold, but it..............snowy tomorrow.</p>
+          <div class="option">
+            <label
+              ><input name="q10" type="radio" value="A" /> will be not
+            </label>
+          </div>
+          <div class="option">
+            <label><input name="q10" type="radio" value="B" /> isn't </label>
+          </div>
+          <div class="option">
+            <label><input name="q10" type="radio" value="C" /> won't be</label>
+          </div>
         </div>
       </div>
-      <div class="question-block" data-correct="C">
-        <p>
-          7. A: ................rainy this afternoon? B: No, it won't. It will
-          be snowy.
-        </p>
-        <div class="option">
-          <label><input name="q7" type="radio" value="A" /> shoulds see</label>
-        </div>
-        <div class="option">
-          <label
-            ><input name="q7" type="radio" value="B" /> should seeing</label
-          >
-        </div>
-        <div class="option">
-          <label><input name="q7" type="radio" value="C" /> should see</label>
-        </div>
-      </div>
-      <div class="question-block" data-correct="A">
-        <p>
-          8. Climate experts predict the rainfall in this region...............
-          in the next 30 years.
-        </p>
-        <div class="option">
-          <label><input name="q8" type="radio" value="A" /> should take</label>
-        </div>
-        <div class="option">
-          <label><input name="q8" type="radio" value="B" /> shoulds take</label>
-        </div>
-        <div class="option">
-          <label
-            ><input name="q8" type="radio" value="C" /> should taking</label
-          >
-        </div>
-      </div>
-      <div class="question-block" data-correct="B">
-        <p>
-          9. A: ............... to another country? B: No, they won't. They will
-          continue to live here.
-        </p>
-        <div class="option">
-          <label
-            ><input name="q9" type="radio" value="A" /> should not going</label
-          >
-        </div>
-        <div class="option">
-          <label><input name="q9" type="radio" value="B" /> shouldn't go</label>
-        </div>
-        <div class="option">
-          <label
-            ><input name="q9" type="radio" value="C" /> shouldn't be go</label
-          >
-        </div>
-      </div>
-      <div class="question-block" data-correct="C">
-        <p>10. It will be cold, but it..............snowy tomorrow.</p>
-        <div class="option">
-          <label
-            ><input name="q10" type="radio" value="A" /> do I should stay</label
-          >
-        </div>
-        <div class="option">
-          <label
-            ><input name="q10" type="radio" value="B" /> I should stay</label
-          >
-        </div>
-        <div class="option">
-          <label
-            ><input name="q10" type="radio" value="C" /> should I stay</label
-          >
-        </div>
-      </div>
+
       <button onclick="submitAnswers('q6', 5, 'result-II')">
         Submit Part II
       </button>
@@ -334,215 +461,181 @@
     <!-- Passage 1 -->
     <div class="reading-passage">
       <p>
-        Fifty years ago, nobody lived in Antarctica but now between 1,000 and
-        5,000 scientists live and work there all year, and over 50,000 tourists
-        visit every year. The main way for tourists to visit the continent is by
-        ship. There are no hotels, so cruise holidays are very popular. As a
-        result of so many tourists, some people think the numbers of wild
-        animals and birds are decreasing.
+        One of the biggest issues of climate change is that ice at the poles is
+        melting. This causes sea levels to rise and can lead to flooding in
+        coastal areas. Animals that live in these cold places are also losing
+        their homes. This is why some animals, like polar bears, are in trouble.
       </p>
     </div>
     <div class="question-block" data-correct="A">
       <p>11. What trouble does ice melting cause to some animals?</p>
       <div class="option">
         <label
-          ><input name="q11" type="radio" value="A" /> There are more
-          hotels.</label
-        >
+          ><input name="q11" type="radio" value="A" /> They don't have a place
+          to live.
+        </label>
       </div>
       <div class="option">
         <label
-          ><input name="q11" type="radio" value="B" /> There are more
-          people.</label
-        >
+          ><input name="q11" type="radio" value="B" /> They can't find the way
+          home.
+        </label>
       </div>
       <div class="option">
         <label
-          ><input name="q11" type="radio" value="C" /> There are more wild
-          animals and birds.</label
+          ><input name="q11" type="radio" value="C" /> TThey are losing their
+          food because of floods.</label
         >
       </div>
     </div>
     <!-- Passage 2 -->
     <div class="reading-passage">
       <p>
-        I don't like holidays with hotels, beaches and swimming pools, and I'm
-        not interested in sightseeing in old cities. So for my next holiday, I
-        plan to do something exciting outdoors. There are so many tour companies
-        on the internet offering that type of holiday. One company takes
-        backpacking trips over the Andes of South America. Another company has
-        animal safaris in Africa.
+        Climate change is a big problem for the world today. It means that the
+        weather on Earth is getting warmer very quickly. The main cause of this
+        warming is human activity, such as using cars and factories. These
+        actions cause the greenhouse effect. Over time, the planet's overall
+        temperature increases.
       </p>
     </div>
     <div class="question-block" data-correct="A">
       <p>12. What is mainly causing climate change?</p>
       <div class="option">
         <label
-          ><input name="q12" type="radio" value="A" /> sightseeing holidays in
-          old cities</label
-        >
+          ><input name="q12" type="radio" value="A" /> things humans do
+        </label>
       </div>
       <div class="option">
         <label
-          ><input name="q12" type="radio" value="B" /> relaxing holidays with
-          hotels and beaches</label
-        >
+          ><input name="q12" type="radio" value="B" /> the actions of the
+          greenhouse
+        </label>
       </div>
       <div class="option">
         <label
-          ><input name="q12" type="radio" value="C" /> holidays with outdoor
-          activities</label
+          ><input name="q12" type="radio" value="C" /> the warming of cars and
+          factories</label
         >
       </div>
     </div>
     <!-- Passage 3 -->
     <div class="reading-passage">
       <p>
-        I don't like holidays with hotels, beaches and swimming pools, and I'm
-        not interested in sightseeing in old cities. When I choose a holiday, I
-        don't want to go somewhere and see lots of other tourists. I want to be
-        the only person there, which is difficult these days. Is there anywhere
-        in the world without other people? What about Antarctica?
+        Climate scientists have studied the rainfall change on the Earth over 30
+        years. The change in rainfall is very different from region to region.
+        It has increased in some countries, for example Venezuela, and
+        scientists think it will continue to increase in the future. But
+        rainfall has decreased in other places such as parts of Brazil. In these
+        regions, rainfall will continue to decrease.
       </p>
     </div>
     <div class="question-block" data-correct="C">
       <p>13. What do climate scientists predict for rainfall in Venezuela?</p>
       <div class="option">
         <label
-          ><input name="q13" type="radio" value="A" /> a crowded city with many
-          tourists</label
-        >
+          ><input name="q13" type="radio" value="A" /> It won't change.
+        </label>
       </div>
       <div class="option">
         <label
-          ><input name="q13" type="radio" value="B" /> a quiet place without
-          other people</label
-        >
+          ><input name="q13" type="radio" value="B" /> Rain won't fall as often
+          as now.
+        </label>
       </div>
       <div class="option">
         <label
-          ><input name="q13" type="radio" value="C" /> a holiday with hotels and
-          beaches</label
+          ><input name="q13" type="radio" value="C" /> There will be more
+          rain.</label
         >
       </div>
     </div>
     <!-- Passage 4 -->
     <div class="reading-passage">
       <p>
-        When I choose a holiday, I don't want to go somewhere and see lots of
-        other tourists. I want to be the only person there. Antarctica should be
-        perfect for me. It's huge, it's quiet and it's thousands of kilometres
-        away from other countries. It doesn't have a government and there are no
-        cities, so there's no pollution or noisy traffic. It has lots of
-        wildlife.
+        Ira Block took a photo of the US state of South Carolina, and a photo of
+        Baffin Island in the Arctic. She took the two photos because about
+        fifty-six million years ago, the Arctic probably looked like South
+        Carolina today. At that time, the average temperature in the Arctic was
+        around twenty-five degrees Celsius while it is around minus ten degrees
+        now.
       </p>
     </div>
     <div class="question-block" data-correct="B">
       <p>14. How different is the Arctic now from 56 million years ago?</p>
       <div class="option">
         <label
-          ><input name="q14" type="radio" value="A" /> Because it is thousands
-          of kilometres from wildlife.</label
-        >
+          ><input name="q14" type="radio" value="A" /> The average temperature
+          has increased by 25 degrees.
+        </label>
       </div>
       <div class="option">
         <label
-          ><input name="q14" type="radio" value="B" /> Because there are
-          probably not many people there.</label
-        >
+          ><input name="q14" type="radio" value="B" /> The average temperature
+          has decreased by 35 degrees.
+        </label>
       </div>
       <div class="option">
         <label
-          ><input name="q14" type="radio" value="C" /> Because there are lots of
-          people and cities there.</label
+          ><input name="q14" type="radio" value="C" /> The average temperature
+          has decreased by 10 degrees.</label
         >
       </div>
     </div>
-    <!-- Passage 5 -->
-    <div class="reading-passage">
-      <p>
-        There are no hotels in Antarctica, so cruise holidays are very popular.
-        As a result of so many tourists, some people think the numbers of wild
-        animals and birds are decreasing. Many cruise companies teach their
-        passengers about the wildlife in Antarctica and give money to
-        environmental organizations in the region. These organizations want to
-        help the nature and wildlife of Antarctica so it doesn't change in the
-        future.
-      </p>
-    </div>
-    <div class="question-block" data-correct="main cause">
-      <p>
-        15. The Earth is getting warmer very quickly. The...............is human
-        actions, which lead to the greenhouse effect.
-      </p>
-      <div class="option">
-        <label
-          ><input name="q15" type="radio" value="A" /> They give money to
-          passengers to protect the environment.</label
-        >
-      </div>
-      <div class="option">
-        <label
-          ><input name="q15" type="radio" value="B" /> They take more tourists
-          to visit Antarctica.</label
-        >
-      </div>
-      <div class="option">
-        <label
-          ><input name="q15" type="radio" value="C" /> They help tourists
-          understand wildlife.</label
-        >
-      </div>
-    </div>
-    <!-- Passage 6 -->
-    <div class="reading-passage">
-      <p>
-        Climate scientists have measured the temperature and rainfall on every
-        part of the Earth over many years. They look at the changes and predict
-        the future. The map shows the temperature change over 30 years. In most
-        parts of the world, the temperature has increased by a few degrees and
-        scientists think it will increase in the future.
-      </p>
-    </div>
-    <div class="question-block" data-correct="A">
-      <p>
-        17 What predictions have climate scientists made after studying the
-        global temperature change?
-      </p>
-      <div class="option">
-        <label
-          ><input name="q17" type="radio" value="A" /> The temperature will be
-          higher in most parts of the world.</label
-        >
-      </div>
-      <div class="option">
-        <label
-          ><input name="q17" type="radio" value="B" /> The temperature will
-          increase in all parts of the world.</label
-        >
-      </div>
-      <div class="option">
-        <label
-          ><input name="q17" type="radio" value="C" /> The temperature will
-          increase by a few degrees each year.</label
-        >
-      </div>
-    </div>
-    <button onclick="submitAnswers('q11', 7, 'result-III')">
+    <button onclick="submitAnswers('q11', 4, 'result-III')">
       Submit Part III
     </button>
     <div class="result" id="result-III"></div>
-    <button onclick="resetPart('q11', 7, 'result-III')">Reset Part III</button>
+    <button onclick="resetPart('q11', 4, 'result-III')">Reset Part III</button>
     <!-- PART IV -->
     <h3>IV. Fill in the blank (TWO or THREE words from the text)</h3>
     <div class="passage">
-      There are so many tour companies on the internet offering holidays
-      outdoors. One company takes backpacking trips over the Andes of South
-      America. Another company has animal safaris in Africa. And you can even go
-      swimming with dolphins with a tour group in Australia.
+      Climate change is a big problem for the world today. It means that the
+      weather on Earth is getting warmer very quickly. The main cause of this
+      warming is human activity, such as using cars and factories. These actions
+      cause the greenhouse effect. Over time, the planet's overall temperature
+      increases.
+    </div>
+    <div class="question-block" data-correct="main cause">
+      <p>
+        16.The Earth is getting warmer very quickly. The...............is human
+        actions, which lead to the greenhouse effect.
+      </p>
+      <input
+        name="q16"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="passage">
+      Climate scientists have studied the rainfall change on the Earth over 30
+      years. The change in rainfall is very different from region to region. It
+      has increased in some countries, like Venezuela. But rainfall has
+      decreased in other places such as parts of Brazil.
     </div>
     <div class="question-block" data-correct="has increased in">
-      <p>18. Rainfall...............some regions, and decreased in others.</p>
+      <p>
+        17. By studying the change in rainfall, climate scientists have found
+        that rainfall...............some regions, and decreased in others.
+      </p>
+      <input
+        name="q17"
+        placeholder="Your answer here"
+        style="width: 90%; margin: 10px 20px; padding: 6px"
+        type="text"
+      />
+    </div>
+    <div class="passage">
+      Climate scientists have measured the temperature on every part of the
+      Earth over many years. They look at the changes and predict the future. In
+      most parts of the world, the temperature has increased by a few degrees
+      and scientists think it will increase in the future.
+    </div>
+    <div class="question-block" data-correct="the changes">
+      <p>
+        18. Climate scientists have studied..........in the Earth's temperature
+        and found that it has increased in most parts of the world.
+      </p>
       <input
         name="q18"
         placeholder="Your answer here"
@@ -551,15 +644,15 @@
       />
     </div>
     <div class="passage">
-      When I choose a holiday, I don't want to go somewhere and see lots of
-      other tourists. I want to be the only person there. Antarctica should be
-      perfect for me. It's huge, it's quiet and it's thousands of kilometres
-      away from other countries.
+      One of the biggest issues of climate change is that ice at the poles is
+      melting. This causes sea levels to rise and can lead to flooding in
+      coastal areas. Animals that live in these cold places are also losing
+      their homes. This is why some animals, like polar bears, are in trouble.
     </div>
-    <div class="question-block" data-correct="the changes">
+    <div class="question-block" data-correct="sea levels">
       <p>
-        19. Climate scientists have studied..........in the Earth's temperature
-        and found that it has increased in most parts of the world.
+        19. Polar ice melt causes rising............, leading to coastal
+        flooding and home loss for polar animals.
       </p>
       <input
         name="q19"
@@ -569,14 +662,16 @@
       />
     </div>
     <div class="passage">
-      Like many places in the world, Antarctica is changing. Fifty years ago,
-      nobody lived here but now between 1,000 and 5,000 scientists live and work
-      there all year, and over 50,000 tourists visit every year.
+      Climate experts have been able to predict storms and warn people in
+      advance. However, there are still weather events that are difficult to
+      predict, like tornadoes. Scientists are working to improve their
+      technology, but it takes time to understand all the factors that cause
+      these events.
     </div>
-    <div class="question-block" data-correct="sea levels">
+    <div class="question-block" data-correct="predict difficult">
       <p>
-        20. Polar ice melt causes rising............, leading to coastal
-        flooding and home loss for polar animals.
+        20. Scientists are working to improve their technology to
+        ...........weather events.
       </p>
       <input
         name="q20"
@@ -585,16 +680,20 @@
         type="text"
       />
     </div>
-    <div class="passage">
-      There are no hotels, so cruise holidays are very popular in Antarctica.
-      You can leave the ship during the day and there are guided tours of areas
-      with wildlife. As a result of so many tourists, some people think the
-      numbers of wild animals and birds are decreasing.
-    </div>
-    <div class="question-block" data-correct="predict difficult">
+    <button onclick="submitTextAnswers(16, 5, 'result-IV')">
+      Submit Part IV
+    </button>
+    <div class="result" id="result-IV"></div>
+    <button onclick="resetPart('q16', 5, 'result-IV')">Reset Part IV</button>
+    <!-- PART V -->
+    <h3>
+      V. Complete the prediction with THREE to FOUR WORDS. Use "will" or "won't"
+      and the word in brackets.
+    </h3>
+    <div class="question-block" data-correct="it will be">
       <p>
-        21. Scientists are working to improve their technology to
-        ...........weather events.
+        21. I think.......colder next week. I am going to buy some more sweaters
+        and coats. (be)
       </p>
       <input
         name="q21"
@@ -603,15 +702,11 @@
         type="text"
       />
     </div>
-    <div class="passage">
-      The numbers of wild animals and birds are decreasing, so many cruise
-      companies teach their passengers about the wildlife in Antarctica. They
-      also give money to environmental organizations in the region. These
-      organizations want to protect nature and help the wildlife of Antarctica
-      so it doesn't change in the future.
-    </div>
-    <div class="question-block" data-correct="it will be">
-      <p>22. I think.......colder next week.</p>
+    <div class="question-block" data-correct="it will continue to">
+      <p>
+        22. Peter............a house in the city centre because he doesn't have
+        enough money. He will choose one in the country. (buy)
+      </p>
       <input
         name="q22"
         placeholder="Your answer here"
@@ -619,15 +714,11 @@
         type="text"
       />
     </div>
-    <div class="passage">
-      The numbers of wild animals and birds are decreasing, so many cruise
-      companies teach their passengers about the wildlife in Antarctica. They
-      also give money to environmental organizations in the region. These
-      organizations want to protect nature and help the wildlife of Antarctica
-      so it doesn't change in the future.
-    </div>
-    <div class="question-block" data-correct="it will be">
-      <p>23. I think.......colder next week.</p>
+    <div class="question-block" data-correct="temperature will be">
+      <p>
+        23. This is today's weather forecast for Thai Nguyen.
+        The..........around 25.3°C. The humidity will be 44%. (temperature)
+      </p>
       <input
         name="q23"
         placeholder="Your answer here"
@@ -635,17 +726,10 @@
         type="text"
       />
     </div>
-    <button onclick="submitTextAnswers(18, 6, 'result-IV')">
-      Submit Part IV
-    </button>
-    <div class="result" id="result-IV"></div>
-    <button onclick="resetPart('q18', 6, 'result-IV')">Reset Part IV</button>
-    <!-- PART V -->
-    <h3>V. Advice using “should”</h3>
-    <div class="question-block" data-correct="will not buy">
+    <div class="question-block" data-correct="won't come to|will not come to">
       <p>
-        24. Peter............a house in the city centre because he doesn't have
-        enough money.
+        24. : Edmond...............our dinner party tonight because he is busy
+        with too much work to do. (come)
       </p>
       <input
         name="q24"
@@ -654,8 +738,11 @@
         type="text"
       />
     </div>
-    <div class="question-block" data-correct="It will continue to">
-      <p>25. The temperature won't stop increasing ............... increase.</p>
+    <div class="question-block" data-correct="it will continue to">
+      <p>
+        25. The temperature won't stop increasing ............... increase.
+        (continue)
+      </p>
       <input
         name="q25"
         placeholder="Your answer here"
@@ -663,57 +750,26 @@
         type="text"
       />
     </div>
-    <div class="question-block" data-correct="temperature will be">
-      <p>
-        26. This is today's weather forecast for Thai Nguyen.
-        The..........around 25.3°C.
-      </p>
-      <input
-        name="q26"
-        placeholder="Your answer here"
-        style="width: 90%; margin: 10px 20px; padding: 6px"
-        type="text"
-      />
-    </div>
-    <div class="question-block" data-correct="won't come to">
-      <p>
-        27. Edmond...............our dinner party tonight because he is busy.
-      </p>
-      <input
-        name="q27"
-        placeholder="Your answer here"
-        style="width: 90%; margin: 10px 20px; padding: 6px"
-        type="text"
-      />
-    </div>
-    <div class="question-block" data-correct="should go on holiday">
-      <p>28. You ................. by the sea and have some rest. (holiday)</p>
-      <input
-        name="q28"
-        placeholder="Your answer here"
-        style="width: 90%; margin: 10px 20px; padding: 6px"
-        type="text"
-      />
-    </div>
-    <button onclick="submitTextAnswers(19, 5, 'result-V')">
+    <button onclick="submitTextAnswers(21, 5, 'result-V')">
       Submit Part V
     </button>
     <div class="result" id="result-V"></div>
-    <button onclick="resetPart('q19', 5, 'result-V')">Reset Part V</button>
+    <button onclick="resetPart('q21', 5, 'result-V')">Reset Part V</button>
     <!-- PART VI -->
     <!-- PART VI -->
+    <h3>VI. Sentence ordering</h3>
     <div class="sentence-ordering" id="part-vi">
-      <h3>VI. Sentence ordering</h3>
+      <!-- Question 14 -->
       <div
         class="sentence-question"
         data-answer="Will it continue to rain in this area until the end of the week?"
       >
-        <p>29. Put the words in the correct order:</p>
+        <p>26. Put the words in the correct order:</p>
         <p>
-          <em
-            >Will / it continue / to rain / in this area / until / the end of
-            the week?</em
-          >
+          <em class="shufflable"
+            >of the week? /in this /area until /Will /rain it continue /to /the
+            end
+          </em>
         </p>
         <div
           class="drop-area"
@@ -723,58 +779,59 @@
         <div class="word-bank">
           <span
             draggable="true"
-            id="drag-item-1"
+            id="phrase_0_0"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >of the week?</span
+          ><span
+            draggable="true"
+            id="phrase_0_1"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >in this</span
+          ><span
+            draggable="true"
+            id="phrase_0_2"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >area until</span
+          ><span
+            draggable="true"
+            id="phrase_0_3"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
             >Will</span
-          >
-          <span
+          ><span
             draggable="true"
-            id="drag-item-2"
+            id="phrase_0_4"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >it continue</span
-          >
-          <span
+            >rain it continue</span
+          ><span
             draggable="true"
-            id="drag-item-3"
+            id="phrase_0_5"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >to rain</span
-          >
-          <span
+            >to</span
+          ><span
             draggable="true"
-            id="drag-item-4"
+            id="phrase_0_6"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >in this area</span
-          >
-          <span
-            draggable="true"
-            id="drag-item-5"
-            ondragend="dragEnd(event)"
-            ondragstart="drag(event)"
-            >until</span
-          >
-          <span
-            draggable="true"
-            id="drag-item-6"
-            ondragend="dragEnd(event)"
-            ondragstart="drag(event)"
-            >the end of the week?</span
+            >the end</span
           >
         </div>
       </div>
+      <!-- Question 15 -->
       <div
         class="sentence-question"
-        data-answer="The Earth's temperature will increase in most parts of the world."
+        data-answer="The temperature will increase in most parts of the world."
       >
-        <p>30. Put the words in the correct order:</p>
+        <p>27. Put the words in the correct order:</p>
         <p>
-          <em
-            >The Earth's temperature / will increase / in most parts / of the
-            world.</em
-          >
+          <em class="shufflable"
+            >in most /increase /the world. /temperature /The /parts of /will
+          </em>
         </p>
         <div
           class="drop-area"
@@ -784,41 +841,59 @@
         <div class="word-bank">
           <span
             draggable="true"
-            id="drag-item-7"
+            id="phrase_1_0"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >The Earth's temperature</span
-          >
-          <span
+            >in most</span
+          ><span
             draggable="true"
-            id="drag-item-8"
+            id="phrase_1_1"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >will increase</span
-          >
-          <span
+            >increase</span
+          ><span
             draggable="true"
-            id="drag-item-9"
+            id="phrase_1_2"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >in most parts</span
-          >
-          <span
+            >the world.</span
+          ><span
             draggable="true"
-            id="drag-item-10"
+            id="phrase_1_3"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >of the world.</span
+            >temperature</span
+          ><span
+            draggable="true"
+            id="phrase_1_4"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >The</span
+          ><span
+            draggable="true"
+            id="phrase_1_5"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >parts of</span
+          ><span
+            draggable="true"
+            id="phrase_1_6"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >will</span
           >
         </div>
       </div>
+      <!-- Question 16 -->
       <div
         class="sentence-question"
         data-answer="I think I will move to a warmer country next winter."
       >
-        <p>31. Put the words in the correct order:</p>
+        <p>28. Put the words in the correct order:</p>
         <p>
-          <em>I will / move to / a warmer / country / next winter / I think</em>
+          <em class="shufflable"
+            >next winter /I will /a warm /move to /country /think /I</em
+          >
         </p>
         <div
           class="drop-area"
@@ -828,58 +903,59 @@
         <div class="word-bank">
           <span
             draggable="true"
-            id="drag-item-11"
+            id="phrase_2_0"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >I think</span
-          >
-          <span
+            >next winter</span
+          ><span
             draggable="true"
-            id="drag-item-12"
+            id="phrase_2_1"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
             >I will</span
-          >
-          <span
+          ><span
             draggable="true"
-            id="drag-item-13"
+            id="phrase_2_2"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >I</span
+          ><span
+            draggable="true"
+            id="phrase_2_3"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >think</span
+          ><span
+            draggable="true"
+            id="phrase_2_4"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >a warm</span
+          ><span
+            draggable="true"
+            id="phrase_2_5"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
             >move to</span
-          >
-          <span
+          ><span
             draggable="true"
-            id="drag-item-14"
-            ondragend="dragEnd(event)"
-            ondragstart="drag(event)"
-            >a warmer</span
-          >
-          <span
-            draggable="true"
-            id="drag-item-15"
+            id="phrase_2_5"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
             >country</span
           >
-          <span
-            draggable="true"
-            id="drag-item-16"
-            ondragend="dragEnd(event)"
-            ondragstart="drag(event)"
-            >next winter</span
-          >
         </div>
       </div>
+      <!-- Question 17 -->
       <div
         class="sentence-question"
         data-answer="There will be longer summers in Asian countries in the future."
       >
-        <p>32. Put the words in the correct order:</p>
+        <p>29. Put the words in the correct order:</p>
         <p>
-          <em
-            >There / will be / longer summers / in Asian countries / in the
-            future</em
-          >
+          <em class="shufflable"
+            >longer /There /summers /will be /in Asian countries /in the future
+          </em>
         </p>
         <div
           class="drop-area"
@@ -889,51 +965,54 @@
         <div class="word-bank">
           <span
             draggable="true"
-            id="drag-item-17"
+            id="phrase_3_0"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >longer</span
+          ><span
+            draggable="true"
+            id="phrase_3_1"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
             >There</span
-          >
-          <span
+          ><span
             draggable="true"
-            id="drag-item-18"
+            id="phrase_3_2"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >summers</span
+          ><span
+            draggable="true"
+            id="phrase_3_3"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
             >will be</span
-          >
-          <span
+          ><span
             draggable="true"
-            id="drag-item-19"
-            ondragend="dragEnd(event)"
-            ondragstart="drag(event)"
-            >longer summers</span
-          >
-          <span
-            draggable="true"
-            id="drag-item-20"
+            id="phrase_3_4"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
             >in Asian countries</span
-          >
-          <span
+          ><span
             draggable="true"
-            id="drag-item-21"
+            id="phrase_3_5"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
             >in the future</span
           >
         </div>
       </div>
+      <!-- Question 18 -->
       <div
         class="sentence-question"
         data-answer="I don't think there will be more people living in the city in the future."
       >
-        <p>33. Put the words in the correct order:</p>
+        <p>30. Put the words in the correct order:</p>
         <p>
-          <em
-            >I don't think / there will be / more people / living in the city /
-            in the future.</em
-          >
+          <em class="shufflable"
+            >will be /in the future. /more people /I don't /there /living in the
+            city /think
+          </em>
         </p>
         <div
           class="drop-area"
@@ -943,62 +1022,112 @@
         <div class="word-bank">
           <span
             draggable="true"
-            id="drag-item-22"
+            id="phrase_3_8"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >I don't think</span
-          >
-          <span
+            >will be</span
+          ><span
             draggable="true"
-            id="drag-item-23"
+            id="phrase_3_9"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >there will be</span
-          >
-          <span
+            >in the future.</span
+          ><span
             draggable="true"
-            id="drag-item-24"
+            id="phrase_4_0"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
             >more people</span
-          >
-          <span
+          ><span
             draggable="true"
-            id="drag-item-25"
+            id="phrase_4_1"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >I don't</span
+          ><span
+            draggable="true"
+            id="phrase_4_2"
+            ondragend="dragEnd(event)"
+            ondragstart="drag(event)"
+            >there</span
+          ><span
+            draggable="true"
+            id="phrase_4_3"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
             >living in the city</span
-          >
-          <span
+          ><span
             draggable="true"
-            id="drag-item-26"
+            id="phrase_4_4"
             ondragend="dragEnd(event)"
             ondragstart="drag(event)"
-            >in the future</span
+            >think</span
           >
         </div>
       </div>
+      <!-- Add more questions below if needed -->
       <button onclick="checkSentenceOrdering()">Submit Part VI</button>
       <div class="result" id="result-VI"></div>
       <button onclick="resetSentenceOrdering()">Reset Part VI</button>
     </div>
     <script>
-      function submitTextAnswers(start, count, resultId) {
+      function submitTextAnswers(containerId, resultId) {
+        const container = document.getElementById(containerId);
+        const questionBlocks = container.querySelectorAll(".question-block");
         let score = 0;
-        for (let i = 0; i < count; i++) {
-          const qNum = start + i;
-          const input = document.querySelector('input[name="q' + qNum + '"]');
-          const block = input.closest(".question-block");
-          const correct = block
+        let answeredCount = 0;
+
+        questionBlocks.forEach((block) => {
+          const correctValues = block
             .getAttribute("data-correct")
             .toLowerCase()
-            .trim();
-          const userAnswer = input.value.toLowerCase().trim();
-          if (userAnswer === correct) score++;
+            .split("|")
+            .map((v) => v.trim());
+
+          const input = block.querySelector('input[type="text"]');
+          const userAnswer = input.value.trim().toLowerCase();
+
+          const oldHint = block.querySelector(".correct-answer-hint");
+          if (oldHint) oldHint.remove();
+
+          if (userAnswer !== "") {
+            answeredCount++;
+
+            if (correctValues.includes(userAnswer)) {
+              score++;
+              block.style.backgroundColor = "#d4edda";
+              block.style.border = "2px solid #28a745";
+            } else {
+              block.style.backgroundColor = "#f8d7da";
+              block.style.border = "2px solid #dc3545";
+
+              const hint = document.createElement("p");
+              hint.className = "correct-answer-hint";
+              hint.style.color = "#c0392b";
+              hint.style.fontStyle = "italic";
+              hint.style.marginTop = "8px";
+              hint.textContent =
+                "Đáp án đúng là: " + correctValues.join(" hoặc ");
+              block.appendChild(hint);
+            }
+          } else {
+            block.style.backgroundColor = "#fff3cd";
+            block.style.border = "2px dashed #ffc107";
+          }
+        });
+
+        const total = questionBlocks.length;
+        const result = document.getElementById(resultId);
+
+        if (answeredCount < total) {
+          alert("⚠ Vui lòng điền hết tất cả chỗ trống trước khi nộp.");
+          return;
         }
-        document.getElementById(
-          resultId
-        ).innerText = `You scored ${score}/${count}`;
+
+        if (result) {
+          result.innerText = `You scored ${score}/${total}`;
+          result.style.color = score === total ? "green" : "red";
+        }
       }
     </script>
     <script>
@@ -1053,99 +1182,52 @@
 
       function checkSentenceOrdering() {
         const questions = document.querySelectorAll(".sentence-question");
-        let allCorrect = true;
 
-        questions.forEach((q) => {
-          const correct = normalizeSentence(q.getAttribute("data-answer"));
+        let incomplete = false;
+        for (const q of questions) {
           const dropArea = q.querySelector(".drop-area");
-          const words = Array.from(dropArea.children).map((el) =>
-            el.textContent.trim()
-          );
-          const userSentence = normalizeSentence(words.join(" "));
-          if (userSentence !== correct) {
-            allCorrect = false;
+          if (!dropArea || dropArea.children.length === 0) {
+            incomplete = true;
+            break;
           }
-        });
+        }
 
-        const result = document.getElementById("result-VI");
-        result.textContent = allCorrect
-          ? "Part VI: All correct! ✅"
-          : "Part VI: Some sentences are incorrect. ❌";
-        result.style.color = allCorrect ? "green" : "red";
-      }
-    </script>
-    <script>
-      window.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".word-bank").forEach((bank) => {
-          const spans = Array.from(bank.children);
-          for (let i = spans.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            bank.appendChild(spans[j]);
-          }
-        });
-      });
-    </script>
-    <script>
-      function normalizeSentence(sentence) {
-        return sentence
-          .toLowerCase()
-          .replace(/[.?!]/g, "")
-          .replace(/\s+/g, " ")
-          .trim();
-      }
+        if (incomplete) {
+          alert("⚠ Vui lòng sắp xếp tất cả câu trước khi nộp!");
+          return;
+        }
 
-      function checkSentenceOrdering() {
-        const questions = document.querySelectorAll(".sentence-question");
         let correctCount = 0;
-
-        questions.forEach((q) => {
+        for (const q of questions) {
           const correct = normalizeSentence(q.getAttribute("data-answer"));
           const dropArea = q.querySelector(".drop-area");
           const words = Array.from(dropArea.children).map((el) =>
             el.textContent.trim()
           );
           const userSentence = normalizeSentence(words.join(" "));
-          if (userSentence === correct) {
-            correctCount++;
-          }
-        });
 
-        const total = questions.length;
-        const result = document.getElementById("result-VI");
-        result.textContent = `Part VI: You got ${correctCount}/${total} correct.`;
-        result.style.color = correctCount === total ? "green" : "red";
-      }
-    </script>
-    <script>
-      function normalizeSentence(sentence) {
-        return sentence
-          .toLowerCase()
-          .replace(/[.?!]/g, "")
-          .replace(/\s+/g, " ")
-          .trim();
-      }
-
-      function checkSentenceOrdering() {
-        const questions = document.querySelectorAll(".sentence-question");
-        let correctCount = 0;
-
-        questions.forEach((q) => {
-          const correct = normalizeSentence(q.getAttribute("data-answer"));
-          const dropArea = q.querySelector(".drop-area");
-          const words = Array.from(dropArea.children).map((el) =>
-            el.textContent.trim()
-          );
-          const userSentence = normalizeSentence(words.join(" "));
+          // Xoá đáp án đúng cũ
+          const oldHint = q.querySelector(".correct-sentence-hint");
+          if (oldHint) oldHint.remove();
 
           if (userSentence === correct) {
             correctCount++;
-            dropArea.style.backgroundColor = "#d4edda"; // light green
+            dropArea.style.backgroundColor = "#d4edda";
             dropArea.style.border = "2px solid #28a745";
           } else {
-            dropArea.style.backgroundColor = "#f8d7da"; // light red
+            dropArea.style.backgroundColor = "#f8d7da";
             dropArea.style.border = "2px solid #dc3545";
+
+            const hint = document.createElement("p");
+            hint.className = "correct-sentence-hint";
+            hint.style.color = "#c0392b";
+            hint.style.fontStyle = "italic";
+            hint.style.marginTop = "8px";
+            hint.textContent =
+              "Đáp án đúng là: " + q.getAttribute("data-answer");
+            dropArea.insertAdjacentElement("afterend", hint);
           }
-        });
+        }
 
         const total = questions.length;
         const result = document.getElementById("result-VI");
@@ -1165,6 +1247,20 @@
       }
 
       function submitAnswers(firstName, count, resultId) {
+        let answered = 0;
+        for (let i = 0; i < count; i++) {
+          const name =
+            firstName.slice(0, 1) + (parseInt(firstName.slice(1)) + i);
+          const selected = document.querySelector(
+            'input[name="' + name + '"]:checked'
+          );
+          if (selected) answered++;
+        }
+        if (answered < count) {
+          alert("⚠ Vui lòng trả lời tất cả các câu hỏi trước khi nộp!");
+          return;
+        }
+
         let score = 0;
         for (let i = 0; i < count; i++) {
           const name =
@@ -1172,47 +1268,101 @@
           const input = document.querySelector('input[name="' + name + '"]');
           if (!input) continue;
           const block = input.closest(".question-block");
-          const correct = block.getAttribute("data-correct");
+          const correctValue = block.getAttribute("data-correct");
           const selected = block.querySelector(
             'input[name="' + name + '"]:checked'
           );
-          if (selected && selected.value === correct) {
+
+          const oldHint = block.querySelector(".correct-answer-hint");
+          if (oldHint) oldHint.remove();
+
+          if (selected && selected.value === correctValue) {
             score++;
             block.style.backgroundColor = "#d4edda";
             block.style.border = "2px solid #28a745";
           } else {
             block.style.backgroundColor = "#f8d7da";
             block.style.border = "2px solid #dc3545";
+
+            const correctInput = block.querySelector(
+              'input[value="' + correctValue + '"]'
+            );
+            const correctText = correctInput.closest("label").innerText.trim();
+
+            const hint = document.createElement("p");
+            hint.className = "correct-answer-hint";
+            hint.style.color = "#c0392b";
+            hint.style.fontStyle = "italic";
+            hint.style.marginTop = "8px";
+            hint.textContent = "Đáp án đúng là: " + correctText;
+            block.appendChild(hint);
           }
         }
-        document.getElementById(
-          resultId
-        ).innerText = `You scored ${score}/${count}`;
+
+        const result = document.getElementById(resultId);
+        if (result) {
+          result.innerText = `You scored ${score}/${count}`;
+          result.style.color = score === count ? "green" : "red";
+        }
       }
 
-      function submitTextAnswers(start, count, resultId) {
+      function submitTextAnswers(containerId, resultId) {
+        const container = document.getElementById(containerId);
+        const questionBlocks = container.querySelectorAll(".question-block");
         let score = 0;
-        for (let i = 0; i < count; i++) {
-          const qNum = start + i;
-          const input = document.querySelector('input[name="q' + qNum + '"]');
-          const block = input.closest(".question-block");
-          const correct = block
+        let answeredCount = 0;
+
+        questionBlocks.forEach((block) => {
+          const correctValues = block
             .getAttribute("data-correct")
             .toLowerCase()
-            .trim();
-          const userAnswer = input.value.toLowerCase().trim();
-          if (userAnswer === correct) {
-            score++;
-            block.style.backgroundColor = "#d4edda";
-            block.style.border = "2px solid #28a745";
+            .split("|")
+            .map((v) => v.trim());
+
+          const input = block.querySelector('input[type="text"]');
+          const userAnswer = input.value.trim().toLowerCase();
+
+          const oldHint = block.querySelector(".correct-answer-hint");
+          if (oldHint) oldHint.remove();
+
+          if (userAnswer !== "") {
+            answeredCount++;
+
+            if (correctValues.includes(userAnswer)) {
+              score++;
+              block.style.backgroundColor = "#d4edda";
+              block.style.border = "2px solid #28a745";
+            } else {
+              block.style.backgroundColor = "#f8d7da";
+              block.style.border = "2px solid #dc3545";
+
+              const hint = document.createElement("p");
+              hint.className = "correct-answer-hint";
+              hint.style.color = "#c0392b";
+              hint.style.fontStyle = "italic";
+              hint.style.marginTop = "8px";
+              hint.textContent =
+                "Đáp án đúng là: " + correctValues.join(" hoặc ");
+              block.appendChild(hint);
+            }
           } else {
-            block.style.backgroundColor = "#f8d7da";
-            block.style.border = "2px solid #dc3545";
+            block.style.backgroundColor = "#fff3cd";
+            block.style.border = "2px dashed #ffc107";
           }
+        });
+
+        const total = questionBlocks.length;
+        const result = document.getElementById(resultId);
+
+        if (answeredCount < total) {
+          alert("⚠ Vui lòng điền hết tất cả chỗ trống trước khi nộp.");
+          return;
         }
-        document.getElementById(
-          resultId
-        ).innerText = `You scored ${score}/${count}`;
+
+        if (result) {
+          result.innerText = `You scored ${score}/${total}`;
+          result.style.color = score === total ? "green" : "red";
+        }
       }
     </script>
     <script>
@@ -1222,9 +1372,14 @@
           const dropArea = q.querySelector(".drop-area");
           const spans = Array.from(dropArea.children);
           spans.forEach((span) => wordBank.appendChild(span));
+
           dropArea.style.backgroundColor = "#f9f9f9";
           dropArea.style.border = "1px dashed #aaa";
+
+          const oldHint = q.querySelector(".correct-sentence-hint");
+          if (oldHint) oldHint.remove();
         });
+
         const result = document.getElementById("result-VI");
         if (result) result.textContent = "";
       }
@@ -1244,6 +1399,9 @@
             block.style.backgroundColor = "#fafafa";
             block.style.border = "1px solid #ccc";
             block.style.borderLeft = "5px solid #007bff";
+
+            const existingHint = block.querySelector(".correct-answer-hint");
+            if (existingHint) existingHint.remove();
           }
         }
         const result = document.getElementById(resultId);
@@ -1254,6 +1412,20 @@
       }
 
       function submitAnswers(firstName, count, resultId) {
+        let answered = 0;
+        for (let i = 0; i < count; i++) {
+          const name =
+            firstName.slice(0, 1) + (parseInt(firstName.slice(1)) + i);
+          const selected = document.querySelector(
+            'input[name="' + name + '"]:checked'
+          );
+          if (selected) answered++;
+        }
+        if (answered < count) {
+          alert("⚠ Vui lòng trả lời tất cả các câu hỏi trước khi nộp!");
+          return;
+        }
+
         let score = 0;
         for (let i = 0; i < count; i++) {
           const name =
@@ -1261,19 +1433,37 @@
           const input = document.querySelector('input[name="' + name + '"]');
           if (!input) continue;
           const block = input.closest(".question-block");
-          const correct = block.getAttribute("data-correct");
+          const correctValue = block.getAttribute("data-correct");
           const selected = block.querySelector(
             'input[name="' + name + '"]:checked'
           );
-          if (selected && selected.value === correct) {
+
+          const oldHint = block.querySelector(".correct-answer-hint");
+          if (oldHint) oldHint.remove();
+
+          if (selected && selected.value === correctValue) {
             score++;
             block.style.backgroundColor = "#d4edda";
             block.style.border = "2px solid #28a745";
           } else {
             block.style.backgroundColor = "#f8d7da";
             block.style.border = "2px solid #dc3545";
+
+            const correctInput = block.querySelector(
+              'input[value="' + correctValue + '"]'
+            );
+            const correctText = correctInput.closest("label").innerText.trim();
+
+            const hint = document.createElement("p");
+            hint.className = "correct-answer-hint";
+            hint.style.color = "#c0392b";
+            hint.style.fontStyle = "italic";
+            hint.style.marginTop = "8px";
+            hint.textContent = "Đáp án đúng là: " + correctText;
+            block.appendChild(hint);
           }
         }
+
         const result = document.getElementById(resultId);
         if (result) {
           result.innerText = `You scored ${score}/${count}`;
@@ -1282,30 +1472,151 @@
       }
 
       function submitTextAnswers(start, count, resultId) {
+        let answered = 0;
+
+        for (let i = 0; i < count; i++) {
+          const qNum = start + i;
+          const input = document.querySelector('input[name="q' + qNum + '"]');
+          if (input && input.value.trim() !== "") answered++;
+        }
+
+        if (answered < count) {
+          alert("⚠ Vui lòng điền tất cả ô trước khi nộp!");
+          return;
+        }
+
         let score = 0;
+
         for (let i = 0; i < count; i++) {
           const qNum = start + i;
           const input = document.querySelector('input[name="q' + qNum + '"]');
           const block = input.closest(".question-block");
-          const correct = block
+
+          const correctValues = block
             .getAttribute("data-correct")
             .toLowerCase()
-            .trim();
+            .split("|")
+            .map((v) => v.trim());
+
           const userAnswer = input.value.toLowerCase().trim();
-          if (userAnswer === correct) {
+
+          const oldHint = block.querySelector(".correct-answer-hint");
+          if (oldHint) oldHint.remove();
+
+          if (correctValues.includes(userAnswer)) {
             score++;
             block.style.backgroundColor = "#d4edda";
             block.style.border = "2px solid #28a745";
           } else {
             block.style.backgroundColor = "#f8d7da";
             block.style.border = "2px solid #dc3545";
+
+            const hint = document.createElement("p");
+            hint.className = "correct-answer-hint";
+            hint.style.color = "#c0392b";
+            hint.style.fontStyle = "italic";
+            hint.style.marginTop = "8px";
+            hint.textContent =
+              "Đáp án đúng là: " + correctValues.join(" hoặc ");
+            block.appendChild(hint);
           }
         }
+
         const result = document.getElementById(resultId);
         if (result) {
           result.innerText = `You scored ${score}/${count}`;
           result.style.color = score === count ? "green" : "red";
         }
+      }
+    </script>
+
+    <script>
+      function shuffleQuestions(containerId, itemClass = ".question-block") {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const items = Array.from(container.querySelectorAll(itemClass));
+        for (let i = items.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          container.appendChild(items[j]);
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        shuffleQuestions("part-I");
+        shuffleOptionsInQuestions("part-I");
+
+        shuffleQuestions("part-II");
+        shuffleOptionsInQuestions("part-II");
+
+        shuffleQuestions("part-III");
+        shuffleOptionsInQuestions("part-III");
+
+        shuffleQuestions("part-IV");
+        shuffleQuestions("part-V");
+
+        shuffleQuestions("part-VI", ".sentence-question");
+
+        document.querySelectorAll(".word-bank").forEach((bank) => {
+          const spans = Array.from(bank.children);
+          for (let i = spans.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            bank.appendChild(spans[j]);
+          }
+        });
+
+        document.querySelectorAll("em.shufflable").forEach((el) => {
+          const parts = el.textContent
+            .split("/")
+            .map((part) => part.trim())
+            .filter(Boolean);
+
+          for (let i = parts.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [parts[i], parts[j]] = [parts[j], parts[i]];
+          }
+
+          el.innerHTML = parts.join(" / ");
+        });
+      });
+    </script>
+    <script>
+      function shuffleOptionsInQuestions(containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        const questions = container.querySelectorAll(".question-block");
+
+        questions.forEach((q) => {
+          const correctValue = q.getAttribute("data-correct");
+
+          const options = Array.from(q.querySelectorAll(".option"));
+
+          const optionClones = options.map((opt) => {
+            const input = opt.querySelector("input");
+            return {
+              value: input.value,
+              isCorrect: input.value === correctValue,
+              node: opt.cloneNode(true), // an toàn layout
+            };
+          });
+
+          for (let i = optionClones.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [optionClones[i], optionClones[j]] = [
+              optionClones[j],
+              optionClones[i],
+            ];
+          }
+
+          options.forEach((opt) => opt.remove());
+
+          optionClones.forEach((opt) => {
+            q.appendChild(opt.node); // giữ layout .option
+            if (opt.isCorrect) {
+              q.setAttribute("data-correct", opt.value); // cập nhật lại
+            }
+          });
+        });
       }
     </script>
   </body>
