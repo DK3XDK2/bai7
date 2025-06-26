@@ -1065,7 +1065,6 @@
           >
         </div>
       </div>
-      <!-- Add more questions below if needed -->
       <button onclick="checkSentenceOrdering()">Submit Part VI</button>
       <div class="result" id="result-VI"></div>
       <button onclick="resetSentenceOrdering()">Reset Part VI</button>
@@ -1611,9 +1610,9 @@
           options.forEach((opt) => opt.remove());
 
           optionClones.forEach((opt) => {
-            q.appendChild(opt.node); // giữ layout .option
+            q.appendChild(opt.node); 
             if (opt.isCorrect) {
-              q.setAttribute("data-correct", opt.value); // cập nhật lại
+              q.setAttribute("data-correct", opt.value);
             }
           });
         });
