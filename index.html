@@ -350,13 +350,34 @@
             >
           </div>
         </div>
+        <div class="question-block" data-correct="B">
+          <p>5. Cực Bắc cách Cực Nam 20,000 km.</p>
+          <div class="option">
+            <label
+              ><input name="q5" type="radio" value="A" /> The North Pole is
+              20,000 centimetres from the South Pole.
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q5" type="radio" value="B" /> The North Pole is
+              20,000 kilometres from the South Pole.
+            </label>
+          </div>
+          <div class="option">
+            <label
+              ><input name="q5" type="radio" value="C" /> The North Pole is
+              20,000 kilometres away the South Pole.
+            </label>
+          </div>
+        </div>
       </div>
 
-      <button onclick="submitAnswers('q1', 4, 'result-I')">
+      <button onclick="submitAnswers('q1', 5, 'result-I')">
         Submit Part I
       </button>
       <div class="result" id="result-I"></div>
-      <button onclick="resetPart('q1', 4, 'result-I')">Reset Part I</button>
+      <button onclick="resetPart('q1', 5, 'result-I')">Reset Part I</button>
       <!-- PART II -->
       <h3>II. Choose the best option A, B or C to complete the sentences</h3>
       <div id="part-II">
@@ -1610,7 +1631,7 @@
           options.forEach((opt) => opt.remove());
 
           optionClones.forEach((opt) => {
-            q.appendChild(opt.node); 
+            q.appendChild(opt.node);
             if (opt.isCorrect) {
               q.setAttribute("data-correct", opt.value);
             }
