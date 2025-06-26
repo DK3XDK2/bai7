@@ -350,34 +350,13 @@
             >
           </div>
         </div>
-        <div class="question-block" data-correct="B">
-          <p>5. Cực Bắc cách Cực Nam 20,000 km.</p>
-          <div class="option">
-            <label
-              ><input name="q5" type="radio" value="A" /> The North Pole is
-              20,000 centimetres from the South Pole.
-            </label>
-          </div>
-          <div class="option">
-            <label
-              ><input name="q5" type="radio" value="B" /> The North Pole is
-              20,000 kilometres from the South Pole.
-            </label>
-          </div>
-          <div class="option">
-            <label
-              ><input name="q5" type="radio" value="C" /> The North Pole is
-              20,000 kilometres away the South Pole.
-            </label>
-          </div>
-        </div>
       </div>
 
-      <button onclick="submitAnswers('q1', 5, 'result-I')">
+      <button onclick="submitAnswers('q1', 4, 'result-I')">
         Submit Part I
       </button>
       <div class="result" id="result-I"></div>
-      <button onclick="resetPart('q1', 5, 'result-I')">Reset Part I</button>
+      <button onclick="resetPart('q1', 4, 'result-I')">Reset Part I</button>
       <!-- PART II -->
       <h3>II. Choose the best option A, B or C to complete the sentences</h3>
       <div id="part-II">
@@ -602,11 +581,46 @@
         >
       </div>
     </div>
-    <button onclick="submitAnswers('q11', 4, 'result-III')">
+    <!-- Passage 5 -->
+    <div class="reading-passage">
+      <p>
+        Climate scientists have measured the temperature and rainfall on every
+        part of the Earth over many years. They look at the changes and predict
+        the future. The map shows the temperature change over 30 years. In most
+        parts of the world, the temperature has increased by a few degrees and
+        scientists think it will increase in the future.
+      </p>
+    </div>
+    <div class="question-block" data-correct="A">
+      <p>
+        15. What predictions have climate scientists made after studying the
+        global temperature change?
+      </p>
+      <div class="option">
+        <label
+          ><input name="q15" type="radio" value="A" /> The temperature will be
+          higher in most parts of the world.
+        </label>
+      </div>
+      <div class="option">
+        <label
+          ><input name="q15" type="radio" value="B" /> The temperature will
+          increase in all parts of the world.
+        </label>
+      </div>
+      <div class="option">
+        <label
+          ><input name="q15" type="radio" value="C" /> The temperature will
+          increase by a few degrees each year.</label
+        >
+      </div>
+    </div>
+
+    <button onclick="submitAnswers('q11', 5, 'result-III')">
       Submit Part III
     </button>
     <div class="result" id="result-III"></div>
-    <button onclick="resetPart('q11', 4, 'result-III')">Reset Part III</button>
+    <button onclick="resetPart('q11', 5, 'result-III')">Reset Part III</button>
     <!-- PART IV -->
     <h3>IV. Fill in the blank (TWO or THREE words from the text)</h3>
     <div class="passage">
@@ -1086,6 +1100,7 @@
           >
         </div>
       </div>
+      <!-- Add more questions below if needed -->
       <button onclick="checkSentenceOrdering()">Submit Part VI</button>
       <div class="result" id="result-VI"></div>
       <button onclick="resetSentenceOrdering()">Reset Part VI</button>
@@ -1631,9 +1646,9 @@
           options.forEach((opt) => opt.remove());
 
           optionClones.forEach((opt) => {
-            q.appendChild(opt.node);
+            q.appendChild(opt.node); // giữ layout .option
             if (opt.isCorrect) {
-              q.setAttribute("data-correct", opt.value);
+              q.setAttribute("data-correct", opt.value); // cập nhật lại
             }
           });
         });
